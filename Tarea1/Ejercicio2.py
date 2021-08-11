@@ -4,18 +4,18 @@ minuto = int(input("Ingrese el minuto de inicio del evento: "))
 duracion=int(input("Ingrese la duración del evento en minutos: "))
 dura_horas=0
 
-while duracion >=59:
+while duracion >=60:
     dura_horas+=1
-    duracion-=59
+    duracion-=60
     restante=duracion
 
 if dura_horas>0:
     hora_fin = hora+dura_horas
-    min_fin = restante
+    min_fin = minuto + restante
 else:
     hora_fin=hora
     min_fin=minuto+duracion
-    if min_fin > 59:
+    if min_fin > 60:
         min_fin-=60
         hora_fin+=1
         
