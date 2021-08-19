@@ -6,6 +6,10 @@ resta = x-y
 mult = x*y
 divi = x/y
 pot = x**y
+derx = x>>1
+dery = y>>1
+izqx = x<<1
+izqy = y<<1
 
 print("La suma de {0} y {1} es: {2}".format(x,y,suma))    
 print("La resta de {0} y {1} es: {2}".format(x,y,resta))    
