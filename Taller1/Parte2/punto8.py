@@ -12,6 +12,6 @@ for m in range(1,100):
 
     count=0    
 
-print(suma)    
+print("La suma de los numeros primos del 1 al 100 es: ",suma)    
 
     
