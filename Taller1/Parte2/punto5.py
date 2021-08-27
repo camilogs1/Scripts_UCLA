@@ -6,8 +6,6 @@ resta = x-y
 mult = x*y
 divi = x/y
 pot = x**y
-xbin = bin(x)
-ybin = bin(y)
 derx = x>>1
 dery = y>>1
 izqx = x<<1
@@ -22,5 +20,6 @@ print("El desplazamiento de x a la izquierda y derecha son {} y {} respectivamen
       .format(izqx, derx))
 print("El desplazamiento de y a la izquierda y derecha son {} y {} respectivamente"
       .format(izqy, dery))
-print()
-###  INCOMPLETO
+print("X & Y es igual a:{} ".format(bin(x&y)))
+print("X OR Y es igual a:{} ".format(bin(x|y)))
+print("X XOE Y es igual a:{} ".format(bin(x^y)))
