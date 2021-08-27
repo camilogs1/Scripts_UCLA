@@ -1,5 +1,5 @@
 #datos tomados de: https://www.datos.gov.co/Educaci-n/Poblaci-n-Estudiantil/maqr-kqmi
-
+#Ejercutar las graficas una por una, ya que el archivo de las graficas se guardan en un temp
 import pandas as pd
 import plotly.express as px
 
