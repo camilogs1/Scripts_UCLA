@@ -1,5 +1,6 @@
 from sympy import *
 from numpy import *
+import numpy as np
 
 print("Ingrese los valores de la primera matriz 3x3")
 a = input("Ingrese un a1: ")
@@ -13,6 +14,7 @@ h = input("Ingrese un c2: ")
 i = input("Ingrese un c3: ")
 
 m1 = Matrix([[a, b, c], [d, e, f], [g, h, i]])
+p1 = [[a,b,c], [d,e,f], [g,h,i]]
 
 print("Ingrese los valores de la segunda matriz 3x3")
 j = input("Ingrese un a1: ")
@@ -25,10 +27,12 @@ p = input("Ingrese un c1: ")
 q = input("Ingrese un c2: ")
 r = input("Ingrese un c3: ")
 n1 = Matrix([[j, k, l], [m, n, o], [p, q, r]])
+p2 = [[j,k,l],[m,n,o],[p,q,r]]
 
 A = m1 * n1
 B = m1 + n1
 C = m1 - n1
+D = np.multiply(m1, n1)
 
 print("\n\tLa multiplicación entre las matrices es: \n")
 pprint(A)
@@ -36,3 +40,5 @@ print("\n\tLa suma entre las matrices es: \n")
 pprint(B)
 print("\n\tLa resta entre las matrices es: \n")
 pprint(C)
+pprint("\n\tEl producto punto a punto entre las 2 matrices es: \n")
+pprint("\n"+ str(D))

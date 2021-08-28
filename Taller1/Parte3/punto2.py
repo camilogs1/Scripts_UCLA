@@ -1,7 +1,6 @@
 n = int(input("Ingrese el valor de n: "))
 m = int(input("Ingrese el valor de m: "))
 
-#forma 1
 i=1
 k=0
 for i in range(n):
