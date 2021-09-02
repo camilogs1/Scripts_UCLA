@@ -1,4 +1,4 @@
-a = float(input("Ingrese el coeficiente de XÂ²: "))
+a = float(input("Ingrese el coeficiente de X²: "))
 b = float(input("Ingrese el coeficiente de x: "))
 c = float(input("Ingrese el valor individual: "))
 
