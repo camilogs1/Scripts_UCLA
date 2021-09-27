@@ -9,7 +9,6 @@ print("Opción 3 -> Pagar productos")
 print("Opción 0 -> Salir")
 
 i = int(input("Eliga una opción valida: "))
-registro()
 
 while i != 0 :
 
