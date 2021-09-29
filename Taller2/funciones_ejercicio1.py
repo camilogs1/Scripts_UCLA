@@ -42,4 +42,3 @@ def calcular_promedio(datos_b, total, id):
 def ver_datos(datos, notas, promedio):
     print("Los datos del estudiante son: " + str(datos))
     print("Las notas del estudiante son: " + str(notas))
-    #print("El promedio total de los estudiante es de: " + str(promedio))

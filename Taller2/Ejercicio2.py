@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from funciones_ejercicio2 import *
+
 print("\n\t Pruebas")
 print("Opción 1 -> Adicionar enfermedades y sintomas")
 print("Opción 2 -> Mostar historial enfermedades")

@@ -1,4 +1,4 @@
-from funciones_estudiantes import *
+from funciones_ejercicio1 import *
 
 print("\n\t Bienvenido")
 print("Opción 1 -> Agregar estudiantes")
