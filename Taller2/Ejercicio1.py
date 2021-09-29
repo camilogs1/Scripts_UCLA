@@ -16,7 +16,7 @@ def agregar_notas():
     nota5=int(input("Ingrese la nota del estudiante: "))
     notas =(nota1, nota2, nota3, nota4, nota5)
     return notas
-    
+
 def calcular_promedio(datos_b):
     promedio=0
     i=0
