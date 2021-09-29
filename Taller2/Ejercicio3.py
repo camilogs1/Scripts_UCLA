@@ -1,4 +1,4 @@
-from funciones import *
+from funciones_ejercicio3 import *
 
 def main():
     
