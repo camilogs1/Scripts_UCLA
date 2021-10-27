@@ -116,5 +116,5 @@ def cleaning(df):
 
 def exportar(x1,x2):
     
-    x1.to_csv('ucla.csv', header=False, index=False)
-    x2.to_csv('comparar.csv', header=False, index=False)
+    x1.to_csv('ucla.csv', header=True, index=False)
+    x2.to_csv('comparar.csv', header=True, index=False)
