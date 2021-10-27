@@ -16,8 +16,11 @@ grupo_df_ucla = getting(grupo_df_ucla, grupos_ucla)
 grupo_df_comparar = getting(grupo_df_comparar, grupos_comparar)
 
 #Año    
-grupo_df_ucla = obtener_año(grupo_df_ucla)
-grupo_df_comparar = obtener_año(grupo_df_comparar)
+#grupo_df_ucla = obtener_año(grupo_df_ucla)
+#grupo_df_comparar = obtener_año(grupo_df_comparar)
 
+#prueba limpieza
+grupo_df_ucla = cleaning(grupo_df_ucla)
+grupo_df_comparar = cleaning(grupo_df_comparar)
 
 #año2021 = x >> mask(X.año == "2021")
