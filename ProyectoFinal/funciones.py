@@ -16,15 +16,10 @@ def getting(df, grupos):
     
     return df
     
-def obtener_año(x):
-    
-    x = x.assign(año = lambda x: x['producto'].map(lambda producto: re.sub(".*ISSN", "", producto))).assign(año = lambda x: x['año'].map(lambda año:  re.sub(" vol.*", "", año))).assign(año = lambda x: x['año'].map(lambda año:  re.sub(".*, ", "", año)))
-    return x
-
 def cleaning(df):
-    x = df.iterrows()
+    #x = df.iterrows()
     #tipo_de_producto
-    tipo_de_producto = x
+    #tipo_de_producto = x
     tipo_de_producto = df["producto"].str.split('.- ', n=1, expand=True)
     tipo_de_producto.columns = ['productos', 'tipo_de_producto']
     tipo_de_producto = tipo_de_producto["tipo_de_producto"].str.split(':',n=1,expand=True)
@@ -33,7 +28,7 @@ def cleaning(df):
     df = pd.concat([df, tipo_de_producto], axis=1)
     
     #titulo
-    titulo = x
+    #titulo = x
     titulo = df["producto"].str.split(': ', n=1, expand=True)
     titulo.columns = ['productos', 'titulo']
     titulo = titulo["titulo"].str.split(',.*',n=1,expand=True)
@@ -44,7 +39,7 @@ def cleaning(df):
     df = pd.concat([df, titulo], axis=1)
     
     #revista
-    revista = df.iterrows()
+    #revista = df.iterrows()
     revista = df["producto"].str.split(', ', n=1, expand=True)
     revista.columns = ['a', 'revista']
     revista = revista.drop(['a'], axis=1)
@@ -55,7 +50,7 @@ def cleaning(df):
     df = pd.concat([df, revista], axis=1)
     
     #ISSN
-    issn = x
+    #issn = x
     issn = df["producto"].str.split('ISSN: ', expand=True)
     issn.columns = ['a', 'issn']
     issn = issn["issn"].str.split(',',n=1,expand=True)
@@ -64,7 +59,7 @@ def cleaning(df):
     df = pd.concat([df, issn], axis=1)
     
     #año
-    ano = x
+    #ano = x
     ano = df["producto"].str.split('ISSN: ', expand=True)
     ano.columns = ['a', 'ano']
     ano = ano["ano"].str.split(', ',n=1,expand=True)
@@ -75,7 +70,7 @@ def cleaning(df):
     df = pd.concat([df, ano], axis=1)
     
     #volumen
-    vol = x
+    #vol = x
     vol = df["producto"].str.split('vol:', expand=True)
     vol.columns = ['a', 'vol']
     vol = vol["vol"].str.split(' .*',n=1,expand=True)
@@ -84,7 +79,7 @@ def cleaning(df):
     df = pd.concat([df, vol], axis=1)
     
     #fasc
-    fasc = x
+    #fasc = x
     fasc = df["producto"].str.split('fasc: ', expand=True)
     fasc.columns = ['a', 'fasc']
     fasc = fasc["fasc"].str.split(' .*',n=1,expand=True)
@@ -93,7 +88,7 @@ def cleaning(df):
     df = pd.concat([df, fasc], axis=1)
     
     #pags
-    pags = x
+    #pags = x
     pags = df["producto"].str.split('págs: ', expand=True)
     pags.columns = ['a', 'pags']
     pags = pags["pags"].str.split(', .*',n=1,expand=True)
@@ -102,17 +97,24 @@ def cleaning(df):
     df = pd.concat([df, pags], axis=1)
     
     #doi
-    doi = x
+    #doi = x
     doi = df["producto"].str.split('DOI:', expand=True)
-    doi.columns = ['a', 'doi']
-    doi = doi["doi"].str.split('  .*',n=1,expand=True)
-    doi.columns = ['doi', 'a']
+    doi.columns = ['a', 'doi','b']
+    doi = doi["doi"].str.split(' Aut.*',n=1,expand=True)
+    doi.columns = ['doi', 'a',]
     doi = doi.drop(['a'], axis=1)
     df = pd.concat([df, doi], axis=1)
     
     #autores 
-    autor = x
+    #autor = x
     autor = df["producto"].str.split('Autores: ', expand=True)
     autor.columns = ['a', 'autor']
     autor = autor.drop(['a'], axis=1)
-    df = pd.concat([df, autor], axis=1)        
+    df = pd.concat([df, autor], axis=1)  
+
+    return df   
+
+def exportar(x1,x2):
+    
+    x1.to_csv('ucla.csv', header=False, index=False)
+    x2.to_csv('comparar.csv', header=False, index=False)

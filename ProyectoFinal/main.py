@@ -20,7 +20,11 @@ grupo_df_comparar = getting(grupo_df_comparar, grupos_comparar)
 #grupo_df_comparar = obtener_año(grupo_df_comparar)
 
 #prueba limpieza
-grupo_df_ucla = cleaning(grupo_df_ucla)
-grupo_df_comparar = cleaning(grupo_df_comparar)
+cleaning_ucla = cleaning(grupo_df_ucla)
+ucla = cleaning_ucla.drop(["producto"], axis=1)
+cleaning_comparar = cleaning(grupo_df_comparar)
+comparar = cleaning_comparar.drop(["producto"], axis=1)
 
-#año2021 = x >> mask(X.año == "2021")
+--------------------------------------
+#Exportar
+exportar(ucla,comparar)
