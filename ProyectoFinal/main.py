@@ -15,16 +15,12 @@ grupo_df_comparar = pd.DataFrame(columns=['grupo','producto'])
 grupo_df_ucla = getting(grupo_df_ucla, grupos_ucla)
 grupo_df_comparar = getting(grupo_df_comparar, grupos_comparar)
 
-#Año    
-#grupo_df_ucla = obtener_año(grupo_df_ucla)
-#grupo_df_comparar = obtener_año(grupo_df_comparar)
 
-#prueba limpieza
+#limpieza
 cleaning_ucla = cleaning(grupo_df_ucla)
 ucla = cleaning_ucla.drop(["producto"], axis=1)
 cleaning_comparar = cleaning(grupo_df_comparar)
 comparar = cleaning_comparar.drop(["producto"], axis=1)
 
---------------------------------------
 #Exportar
 exportar(ucla,comparar)
