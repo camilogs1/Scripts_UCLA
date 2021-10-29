@@ -53,11 +53,9 @@ fig = plt.ylabel('articulos')
 fig = plt.grid(True)
 fig = plt.legend(['Articulos por año'])
 fig = plt.figure(figsize=(8,6))
-#punto 12 con datos aleatorios ya que no poseemos con los datos necesarios para darle forma a la grafica
-x=np.random.randint(10, size=60)
-y=np.random.randint(10, size=60)
-z=np.random.randint(10, size=60)
+#punto 12 con datos aleatorios
+z=np.random.randint(10, size=25)
 axes = plt.axes(projection="3d")
-axes.scatter3D(x,y,z,color="blue")
+axes.scatter3D(cantidad3.index, cantidad3["grupo"],z,color="blue")
 axes.set_title("Grafica en 3d")
 #punto 13
