@@ -2,10 +2,10 @@ from mpl_toolkits.mplot3d import axes3d
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-import cv2
+#import cv2
 
 #llamado datos
-ucla = pd.read_csv("https://raw.githubusercontent.com/camilogs1/Scripts_UCLA/main/ProyectoFinal/ucla.csv", sep=",")
+ucla = pd.read_csv("https://raw.githubusercontent.com/camilogs1/Scripts_UCLA/main/ProyectoFinal/ITM.csv", sep=",")
 
 #organizar datos
 cantidad = ucla[["grupo","ano"]]
@@ -15,6 +15,13 @@ cantidad = ucla[["grupo","ano"]]
 cantidad3 = cantidad.groupby(["ano"]).count()
 cantidad4 = ucla[["grupo", "ano", "vol"]]
 
+
+cantidad5 = ucla[["grupo","pais_revista", "ano"]]
+cantidad5 = cantidad5[cantidad5.ano > 2020]
+cantidad6 = cantidad5.groupby(["pais_revista"]).count()
+cantidad6 = cantidad6.sort_values("grupo", ascending=False)
+cantidad6 = cantidad6[["grupo"]]
+cantidad6 = cantidad6.head(10)
 #punto 1
 plt.stem(cantidad3.index, cantidad3["grupo"])
 #punto 2
