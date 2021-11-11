@@ -5,6 +5,7 @@ from funciones import *
 
 grupos_ucla = pd.read_csv("https://docs.google.com/spreadsheets/d/10fAVkAksNJbBec5lyc8zYMq9UH3lF2GPwkKJpGQqnQY/export?format=csv&gid=0")
 
+articulo = pd.read_html(grupos_ucla.iloc[1][1])
 grupos_comparar = pd.read_csv("https://docs.google.com/spreadsheets/d/10fAVkAksNJbBec5lyc8zYMq9UH3lF2GPwkKJpGQqnQY/export?format=csv&gid=176714491")
 
 
